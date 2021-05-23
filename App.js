@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
 
-import MealsNavigator from "./App/navigation/MealsNavigator";
+// import MealsNavigator from "./App/navigation/MealsNavigator";
 
 const fetchFonts = () => {
   Font.loadAsync({
@@ -25,7 +25,8 @@ export default function App({ navigation }) {
   }
   return (
     <View style={styles.container}>
-      <Text onPress={navigation.push("Category")}>HII</Text>
+      {/* <Text onPress={navigation.push("Category")}>HII</Text> */}
+      <Text>Hello</Text>
       <StatusBar style="auto" />
     </View>
   );
