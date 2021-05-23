@@ -25,7 +25,6 @@ export default function App({ navigation }) {
   }
   return (
     <View style={styles.container}>
-      {/* <Text onPress={navigation.push("Category")}>HII</Text> */}
       <Text>Hello</Text>
       <StatusBar style="auto" />
     </View>
