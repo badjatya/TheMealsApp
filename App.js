@@ -4,6 +4,8 @@ import { Text, View } from "react-native";
 import * as Fonts from "expo-font";
 import AppLoading from "expo-app-loading";
 
+import MealsNavigator from "./App/navigation/MealsNavigator";
+
 const fetchFonts = () => {
   return Fonts.loadAsync({
     "open-sans": require("./App/assets/fonts/OpenSans-Regular.ttf"),
@@ -19,12 +21,13 @@ const App = () => {
       <AppLoading
         startAsync={fetchFonts}
         onFinish={() => setFontLoaded(true)}
+        onError={(err) => alert(err)}
       />
     );
   }
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text style={{ fontFamily: "open-sans-bold" }}>Hello World!</Text>
+      <MealsNavigator />
     </View>
   );
 };
