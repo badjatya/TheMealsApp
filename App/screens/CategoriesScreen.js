@@ -26,7 +26,7 @@ const renderGridItem = (itemData) => {
 
 const CategoriesScreen = () => {
   return (
-    <View style={styles.screen}>
+    <View>
       <FlatList
         data={CATEGORIES}
         renderItem={renderGridItem}
