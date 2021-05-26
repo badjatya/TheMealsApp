@@ -4,7 +4,7 @@ import { Text, View } from "react-native";
 import * as Fonts from "expo-font";
 import AppLoading from "expo-app-loading";
 
-// import MealsNavigator from "./App/navigation/MealsNavigator";
+import MealsNavigator from "./App/navigation/MealsNavigator";
 
 const fetchFonts = () => {
   return Fonts.loadAsync({
@@ -27,7 +27,7 @@ const App = () => {
   }
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      {/* <MealsNavigator /> */}
+      <MealsNavigator />
       <Text>HII </Text>
     </View>
   );
