@@ -4,11 +4,6 @@ import { View, Text, StyleSheet, FlatList } from "react-native";
 import { CATEGORIES } from "../data/dummy-data";
 
 const styles = StyleSheet.create({
-  // screen: {
-  //   flex: 1,
-  //   justifyContent: "center",
-  //   alignItems: "center",
-  // },
   gridItem: {
     flex: 1,
     margin: 15,
