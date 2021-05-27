@@ -5,9 +5,11 @@ import {
   StyleSheet,
   FlatList,
   TouchableOpacity,
+  StatusBar,
 } from "react-native";
 
 import { CATEGORIES } from "../data/dummy-data";
+import Colors from "../constants/colors";
 
 const styles = StyleSheet.create({
   gridItem: {
@@ -33,6 +35,10 @@ const CategoriesScreen = (props) => {
 
   return (
     <View>
+      <StatusBar
+        barStyle="dark-content"
+        backgroundColor={Colors.primaryColor}
+      />
       <FlatList
         data={CATEGORIES}
         renderItem={renderGridItem}
