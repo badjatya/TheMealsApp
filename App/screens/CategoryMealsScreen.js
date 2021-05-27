@@ -11,8 +11,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
-const CategoryMealScreen = ({ navigation, params }) => {
-  const catId = navigation.route.catId;
+const CategoryMealScreen = ({ navigation, route }) => {
+  const { catId } = route.params;
 
   const selectedCategory = CATEGORIES.find((cat) => cat.id === catId);
 
