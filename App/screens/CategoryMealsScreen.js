@@ -1,8 +1,8 @@
-import React from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
+import React, { useEffect } from "react";
+import { View, Text, StyleSheet, Button, Platform } from "react-native";
 
 import { CATEGORIES } from "../data/dummy-data";
-// import Colors from "../constants/Colors";
+import Colors from "../constants/colors";
 
 const styles = StyleSheet.create({
   screen: {
@@ -15,6 +15,17 @@ const CategoryMealScreen = ({ navigation, route }) => {
   const { catId } = route.params;
 
   const selectedCategory = CATEGORIES.find((cat) => cat.id === catId);
+
+  useEffect(() => {
+    navigation.setOptions({
+      title: selectedCategory.title,
+      headerStyle: {
+        backgroundColor: Platform.OS === "android" ? Colors.primaryColor : "",
+      },
+      headerTintColor:
+        Platform.OS === "android" ? "white" : Colors.primaryColor,
+    });
+  }, [selectedCategory.title, navigation]);
 
   return (
     <View style={styles.screen}>
