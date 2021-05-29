@@ -5,15 +5,12 @@ import CategoryGridTile from "../components/CategoryGridTile";
 import { CATEGORIES } from "../data/dummy-data";
 import Colors from "../constants/colors";
 
-// const styles = StyleSheet.create({
-
-// });
-
 const CategoriesScreen = (props) => {
   const renderGridItem = (itemData) => {
     return (
       <CategoryGridTile
         title={itemData.item.title}
+        color={itemData.item.color}
         onSelect={() =>
           props.navigation.navigate("Category Meals", {
             catId: itemData.item.id,
