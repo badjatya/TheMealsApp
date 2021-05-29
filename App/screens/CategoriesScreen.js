@@ -41,7 +41,7 @@ const CategoriesScreen = (props) => {
   return (
     <View>
       <StatusBar
-        barStyle="dark-content"
+        barStyle="light-content"
         backgroundColor={Colors.primaryColor}
       />
       <FlatList

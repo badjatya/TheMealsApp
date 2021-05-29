@@ -1,5 +1,12 @@
 import React, { useEffect } from "react";
-import { View, Text, StyleSheet, Button, Platform } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Button,
+  Platform,
+  StatusBar,
+} from "react-native";
 
 import { CATEGORIES } from "../data/dummy-data";
 import Colors from "../constants/colors";
@@ -29,6 +36,10 @@ const CategoryMealScreen = ({ navigation, route }) => {
 
   return (
     <View style={styles.screen}>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor={Colors.primaryColor}
+      />
       <Text>The Category Meal Screen!</Text>
       <Text>{selectedCategory.title}</Text>
       <View style={{ marginBottom: 20 }} />
