@@ -7,15 +7,23 @@ const styles = StyleSheet.create({
     margin: 15,
     height: 150,
   },
+  container: {
+    flex: 1,
+    borderRadius: 10,
+  },
 });
 
 const CategoryGridTile = (props) => {
   return (
-    <TouchableOpacity style={styles.gridItem} onPress={props.onSelect}>
-      <View>
-        <Text>{props.title}</Text>
-      </View>
-    </TouchableOpacity>
+    <View style={styles.gridItem}>
+      <TouchableOpacity style={{ flex: 1 }} onPress={props.onSelect}>
+        <View
+          style={{ ...styles.container, ...{ backgroundColor: props.color } }}
+        >
+          <Text>{props.title}</Text>
+        </View>
+      </TouchableOpacity>
+    </View>
   );
 };
 
