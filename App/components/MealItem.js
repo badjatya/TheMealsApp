@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#F9F9F9",
     borderRadius: 10,
     overflow: "hidden",
+    marginBottom: 20,
   },
   imageBg: {
     width: "100%",
@@ -47,7 +48,10 @@ const styles = StyleSheet.create({
 const MealItem = (props) => {
   return (
     <View style={styles.MealItem}>
-      <TouchableOpacity onPress={props.onSelectMeal}>
+      <TouchableOpacity
+        style={{ backgroundColor: "#ccc" }}
+        onPress={props.onSelectMeal}
+      >
         <View style={{ ...styles.mealRow, ...styles.mealHeader }}>
           <ImageBackground
             source={{ uri: props.imageUrl }}
