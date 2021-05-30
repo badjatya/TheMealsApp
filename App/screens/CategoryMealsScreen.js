@@ -1,12 +1,7 @@
 import React, { useEffect } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  FlatList,
-  Platform,
-  StatusBar,
-} from "react-native";
+import { View, StyleSheet, FlatList, Platform, StatusBar } from "react-native";
+
+import MealItem from "../components/MealItem";
 
 import { CATEGORIES, MEALS } from "../data/dummy-data";
 import Colors from "../constants/colors";
@@ -28,9 +23,11 @@ const CategoryMealScreen = ({ navigation, route }) => {
 
   const renderMealItem = (itemData) => {
     return (
-      <View>
-        <Text>{itemData.item.title}</Text>
-      </View>
+      <MealItem
+        title={itemData.item.title}
+        onPress={() => alert("hii")}
+        duration={itemData.item.duration}
+      />
     );
   };
 
