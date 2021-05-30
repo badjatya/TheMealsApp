@@ -5,6 +5,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 
+import { Ionicons } from "@expo/vector-icons";
+
 import CategoriesScreen from "../screens/CategoriesScreen";
 import CategoryMealsScreen from "../screens/CategoryMealsScreen";
 import MealDetailScreen from "../screens/MealDetailScreen";
@@ -57,9 +59,37 @@ const FavoriteBottomTab = createBottomTabNavigator();
 export default () => {
   return (
     <NavigationContainer>
-      <FavoriteBottomTab.Navigator>
-        <FavoriteBottomTab.Screen name="Home" component={MainStackScreen} />
-        <FavoriteBottomTab.Screen name="Settings" component={FavoritesScreen} />
+      <FavoriteBottomTab.Navigator
+        tabBarOptions={{
+          activeTintColor: Colors.accentColor,
+        }}
+      >
+        <FavoriteBottomTab.Screen
+          name="Home"
+          component={MainStackScreen}
+          options={{
+            tabBarIcon: (tabInfo) => {
+              return (
+                <Ionicons
+                  name="ios-restaurant"
+                  size={25}
+                  color={tabInfo.color}
+                />
+              );
+            },
+          }}
+        />
+        <FavoriteBottomTab.Screen
+          name="Favorites"
+          component={FavoritesScreen}
+          options={{
+            tabBarIcon: (tabInfo) => {
+              return (
+                <Ionicons name="ios-star" size={25} color={tabInfo.color} />
+              );
+            },
+          }}
+        />
       </FavoriteBottomTab.Navigator>
     </NavigationContainer>
   );
