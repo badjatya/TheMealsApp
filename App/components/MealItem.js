@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   mealHeader: {
-    height: "90%",
+    height: "80%",
   },
   mealDetail: {
     padding: 10,
@@ -28,6 +28,8 @@ const MealItem = (props) => {
         </View>
         <View style={{ ...styles.mealRow, ...styles.mealDetail }}>
           <Text>{props.duration}</Text>
+          <Text>{props.complexity}</Text>
+          <Text>{props.affordability}</Text>
         </View>
       </TouchableOpacity>
     </View>

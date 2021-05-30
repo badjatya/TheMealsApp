@@ -25,8 +25,10 @@ const CategoryMealScreen = ({ navigation, route }) => {
     return (
       <MealItem
         title={itemData.item.title}
-        onPress={() => alert("hii")}
         duration={itemData.item.duration}
+        complexity={itemData.item.complexity}
+        affordability={itemData.item.affordability}
+        onPress={() => alert("hii")}
       />
     );
   };
