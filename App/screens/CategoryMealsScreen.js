@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    padding: 15,
   },
 });
 const CategoryMealScreen = ({ navigation, route }) => {
@@ -55,6 +56,7 @@ const CategoryMealScreen = ({ navigation, route }) => {
         data={displayedMeals}
         keyExtractor={(item) => item.id}
         renderItem={renderMealItem}
+        style={{ width: "100%" }}
       />
     </View>
   );
