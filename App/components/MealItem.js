@@ -27,9 +27,9 @@ const MealItem = (props) => {
           <Text>{props.title}</Text>
         </View>
         <View style={{ ...styles.mealRow, ...styles.mealDetail }}>
-          <Text>{props.duration}</Text>
-          <Text>{props.complexity}</Text>
-          <Text>{props.affordability}</Text>
+          <Text>{`${props.duration}m`}</Text>
+          <Text>{props.complexity.toUpperCase()}</Text>
+          <Text>{props.affordability.toUpperCase()}</Text>
         </View>
       </TouchableOpacity>
     </View>
