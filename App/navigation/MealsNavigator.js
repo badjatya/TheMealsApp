@@ -2,11 +2,13 @@ import React from "react";
 import { Platform } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 
 import CategoriesScreen from "../screens/CategoriesScreen";
 import CategoryMealsScreen from "../screens/CategoryMealsScreen";
 import MealDetailScreen from "../screens/MealDetailScreen";
+import FavoritesScreen from "../screens/FavoritesScreen";
 
 import CustomHeaderIcon from "../components/CustomHeaderIcon";
 
@@ -50,10 +52,15 @@ const MainStackScreen = () => {
   );
 };
 
+const FavoriteBottomTab = createBottomTabNavigator();
+
 export default () => {
   return (
     <NavigationContainer>
-      <MainStackScreen />
+      <FavoriteBottomTab.Navigator>
+        <FavoriteBottomTab.Screen name="Home" component={MainStackScreen} />
+        <FavoriteBottomTab.Screen name="Settings" component={FavoritesScreen} />
+      </FavoriteBottomTab.Navigator>
     </NavigationContainer>
   );
 };
