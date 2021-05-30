@@ -3,12 +3,12 @@ import {
   View,
   Text,
   StyleSheet,
-  Button,
+  FlatList,
   Platform,
   StatusBar,
 } from "react-native";
 
-import { CATEGORIES } from "../data/dummy-data";
+import { CATEGORIES, MEALS } from "../data/dummy-data";
 import Colors from "../constants/colors";
 
 const styles = StyleSheet.create({
@@ -22,6 +22,17 @@ const CategoryMealScreen = ({ navigation, route }) => {
   const { catId } = route.params;
 
   const selectedCategory = CATEGORIES.find((cat) => cat.id === catId);
+  const displayedMeals = MEALS.filter(
+    (meal) => meal.categoryIds.indexOf(catId) >= 0
+  );
+
+  const renderMealItem = (itemData) => {
+    return (
+      <View>
+        <Text>{itemData.item.title}</Text>
+      </View>
+    );
+  };
 
   useEffect(() => {
     navigation.setOptions({
@@ -40,15 +51,12 @@ const CategoryMealScreen = ({ navigation, route }) => {
         barStyle="light-content"
         backgroundColor={Colors.primaryColor}
       />
-      <Text>The Category Meal Screen!</Text>
-      <Text>{selectedCategory.title}</Text>
-      <View style={{ marginBottom: 20 }} />
-      <Button
-        title="Go to MealDetails!"
-        onPress={() => navigation.push("Meal Details")}
+
+      <FlatList
+        data={displayedMeals}
+        keyExtractor={(item) => item.id}
+        renderItem={renderMealItem}
       />
-      <View style={{ marginBottom: 20 }} />
-      <Button title="Go back to Categories" onPress={() => navigation.pop()} />
     </View>
   );
 };
