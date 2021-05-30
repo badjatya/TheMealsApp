@@ -1,5 +1,5 @@
 import React from "react";
-import { Platform } from "react-native";
+import { Platform, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -28,7 +28,13 @@ const MainStackScreen = () => {
         }}
       />
       <MainStack.Screen name="Category Meals" component={CategoryMealsScreen} />
-      <MainStack.Screen name="Meal Details" component={MealDetailScreen} />
+      <MainStack.Screen
+        name="Meal Details"
+        component={MealDetailScreen}
+        options={{
+          headerRight: () => <Text>Hii</Text>,
+        }}
+      />
     </MainStack.Navigator>
   );
 };
