@@ -3,6 +3,7 @@ import { Platform } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 
 import { Ionicons } from "@expo/vector-icons";
@@ -54,12 +55,18 @@ const MainStackScreen = () => {
   );
 };
 
-const FavoriteBottomTab = createBottomTabNavigator();
+const FavoriteBottomTab =
+  Platform.OS === "android"
+    ? createMaterialBottomTabNavigator()
+    : createBottomTabNavigator();
 
 export default () => {
   return (
     <NavigationContainer>
       <FavoriteBottomTab.Navigator
+        activeColor="#fff"
+        shifting="true"
+        barStyle={{ backgroundColor: Colors.primaryColor }}
         tabBarOptions={{
           activeTintColor: Colors.accentColor,
         }}
