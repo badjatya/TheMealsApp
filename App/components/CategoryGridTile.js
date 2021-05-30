@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   title: {
-    fontFamily: "open-sans-bold",
+    fontFamily: "open-sans",
     textAlign: "right",
   },
 });

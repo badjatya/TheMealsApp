@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   title: {
     color: "white",
     textAlign: "center",
-    fontFamily: "open-sans-bold",
+    fontFamily: "open-sans",
   },
   mealRow: {
     flexDirection: "row",
@@ -66,8 +66,12 @@ const MealItem = (props) => {
         </View>
         <View style={{ ...styles.mealRow, ...styles.mealDetail }}>
           <Text>{`${props.duration}m`}</Text>
-          <Text>{props.complexity.toUpperCase()}</Text>
-          <Text>{props.affordability.toUpperCase()}</Text>
+          <Text>
+            {props.complexity.replace(/\b\w/g, (l) => l.toUpperCase())}
+          </Text>
+          <Text>
+            {props.affordability.replace(/\b\w/g, (l) => l.toUpperCase())}
+          </Text>
         </View>
       </TouchableOpacity>
     </View>
