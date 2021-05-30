@@ -30,7 +30,11 @@ const CategoryMealScreen = ({ navigation, route }) => {
         complexity={itemData.item.complexity}
         affordability={itemData.item.affordability}
         imageUrl={itemData.item.imageUrl}
-        onPress={() => alert("hii")}
+        onSelectMeal={() =>
+          navigation.navigate("Meal Details", {
+            mealId: itemData.item.id,
+          })
+        }
       />
     );
   };
