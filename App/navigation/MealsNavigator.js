@@ -1,11 +1,14 @@
 import React from "react";
-import { Platform, Text } from "react-native";
+import { Platform } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { HeaderButtons, Item } from "react-navigation-header-buttons";
 
 import CategoriesScreen from "../screens/CategoriesScreen";
 import CategoryMealsScreen from "../screens/CategoryMealsScreen";
 import MealDetailScreen from "../screens/MealDetailScreen";
+
+import CustomHeaderIcon from "../components/CustomHeaderIcon";
 
 import Colors from "../constants/colors";
 
@@ -32,7 +35,15 @@ const MainStackScreen = () => {
         name="Meal Details"
         component={MealDetailScreen}
         options={{
-          headerRight: () => <Text>Hii</Text>,
+          headerRight: () => (
+            <HeaderButtons HeaderButtonComponent={CustomHeaderIcon}>
+              <Item
+                iconName="ios-star-outline"
+                title="Favourite"
+                onPress={() => alert("Hello")}
+              />
+            </HeaderButtons>
+          ),
         }}
       />
     </MainStack.Navigator>
