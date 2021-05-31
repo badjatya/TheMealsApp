@@ -58,8 +58,20 @@ const MainStackScreen = () => {
 const FavStackNavigator = createStackNavigator();
 const FavStackNavigatorScreen = () => {
   return (
-    <FavStackNavigator.Navigator>
-      <FavStackNavigator.Screen name="Favorites" component={FavoritesScreen} />
+    <FavStackNavigator.Navigator screenOptions={{ headerTitleAlign: "center" }}>
+      <FavStackNavigator.Screen
+        name="Favorites"
+        component={FavoritesScreen}
+        options={{
+          title: "Favorites",
+          headerStyle: {
+            backgroundColor:
+              Platform.OS === "android" ? Colors.primaryColor : "",
+          },
+          headerTintColor:
+            Platform.OS === "android" ? "white" : Colors.primaryColor,
+        }}
+      />
     </FavStackNavigator.Navigator>
   );
 };
