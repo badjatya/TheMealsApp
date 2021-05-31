@@ -55,6 +55,15 @@ const MainStackScreen = () => {
   );
 };
 
+const FavStackNavigator = createStackNavigator();
+const FavStackNavigatorScreen = () => {
+  return (
+    <FavStackNavigator.Navigator>
+      <FavStackNavigator.Screen name="Favorites" component={FavoritesScreen} />
+    </FavStackNavigator.Navigator>
+  );
+};
+
 const FavoriteBottomTab =
   Platform.OS === "android"
     ? createMaterialBottomTabNavigator()
@@ -88,7 +97,7 @@ export default () => {
         />
         <FavoriteBottomTab.Screen
           name="Favorites"
-          component={FavoritesScreen}
+          component={FavStackNavigatorScreen}
           options={{
             tabBarIcon: (tabInfo) => {
               return (
