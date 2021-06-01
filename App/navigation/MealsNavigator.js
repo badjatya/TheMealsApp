@@ -30,6 +30,9 @@ const MainStackScreen = ({ navigation }) => {
         headerTitleStyle: {
           fontFamily: "open-sans-bold",
         },
+        headerBackTitleStyle: {
+          fontFamily: "open-sans",
+        },
       }}
     >
       <MainStack.Screen
@@ -84,6 +87,9 @@ const FavStackNavigatorScreen = ({ navigation }) => {
         headerTitleAlign: "center",
         headerTitleStyle: {
           fontFamily: "open-sans-bold",
+        },
+        headerBackTitleStyle: {
+          fontFamily: "open-sans",
         },
       }}
     >
@@ -164,6 +170,9 @@ const FilterStackNavigatorScreen = ({ navigation }) => {
         headerTitleAlign: "center",
         headerTitleStyle: {
           fontFamily: "open-sans-bold",
+        },
+        headerBackTitleStyle: {
+          fontFamily: "open-sans",
         },
       }}
     >
