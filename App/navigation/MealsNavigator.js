@@ -24,7 +24,14 @@ const MainStack = createStackNavigator();
 
 const MainStackScreen = ({ navigation }) => {
   return (
-    <MainStack.Navigator screenOptions={{ headerTitleAlign: "center" }}>
+    <MainStack.Navigator
+      screenOptions={{
+        headerTitleAlign: "center",
+        headerTitleStyle: {
+          fontFamily: "open-sans-bold",
+        },
+      }}
+    >
       <MainStack.Screen
         name="Categories"
         component={CategoriesScreen}
@@ -72,7 +79,14 @@ const MainStackScreen = ({ navigation }) => {
 const FavStackNavigator = createStackNavigator();
 const FavStackNavigatorScreen = ({ navigation }) => {
   return (
-    <FavStackNavigator.Navigator screenOptions={{ headerTitleAlign: "center" }}>
+    <FavStackNavigator.Navigator
+      screenOptions={{
+        headerTitleAlign: "center",
+        headerTitleStyle: {
+          fontFamily: "open-sans-bold",
+        },
+      }}
+    >
       <FavStackNavigator.Screen
         name="Favorites"
         component={FavoritesScreen}
@@ -146,7 +160,12 @@ const FilterStackNavigator = createStackNavigator();
 const FilterStackNavigatorScreen = ({ navigation }) => {
   return (
     <FilterStackNavigator.Navigator
-      screenOptions={{ headerTitleAlign: "center" }}
+      screenOptions={{
+        headerTitleAlign: "center",
+        headerTitleStyle: {
+          fontFamily: "open-sans-bold",
+        },
+      }}
     >
       <FilterStackNavigator.Screen
         name="Filters"
