@@ -1,5 +1,5 @@
 import React from "react";
-import { Platform } from "react-native";
+import { Platform, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -134,10 +134,13 @@ const FavoriteBottomTabScreen = () => {
       barStyle={{ backgroundColor: Colors.primaryColor }}
       tabBarOptions={{
         activeTintColor: Colors.accentColor,
+        labelStyle: {
+          fontFamily: "open-sans",
+        },
       }}
     >
       <FavoriteBottomTab.Screen
-        name="Home"
+        name="Meals"
         component={MainStackScreen}
         options={{
           tabBarIcon: (tabInfo) => {
@@ -145,6 +148,12 @@ const FavoriteBottomTabScreen = () => {
               <Ionicons name="ios-restaurant" size={25} color={tabInfo.color} />
             );
           },
+          tabBarLabel:
+            Platform.OS === "android" ? (
+              <Text style={{ fontFamily: "open-sans" }}>Meals</Text>
+            ) : (
+              "Meals"
+            ),
         }}
       />
       <FavoriteBottomTab.Screen
@@ -154,6 +163,12 @@ const FavoriteBottomTabScreen = () => {
           tabBarIcon: (tabInfo) => {
             return <Ionicons name="ios-star" size={25} color={tabInfo.color} />;
           },
+          tabBarLabel:
+            Platform.OS === "android" ? (
+              <Text style={{ fontFamily: "open-sans" }}>Favorites</Text>
+            ) : (
+              "Favorites"
+            ),
         }}
       />
     </FavoriteBottomTab.Navigator>
