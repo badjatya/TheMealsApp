@@ -7,6 +7,8 @@ import {
   ImageBackground,
 } from "react-native";
 
+import DefaultOpenSansText from "./DefaultOpenSansText";
+
 const styles = StyleSheet.create({
   MealItem: {
     height: 200,
@@ -65,13 +67,13 @@ const MealItem = (props) => {
           </ImageBackground>
         </View>
         <View style={{ ...styles.mealRow, ...styles.mealDetail }}>
-          <Text>{`${props.duration}m`}</Text>
-          <Text>
+          <DefaultOpenSansText>{`${props.duration}m`}</DefaultOpenSansText>
+          <DefaultOpenSansText>
             {props.complexity.replace(/\b\w/g, (l) => l.toUpperCase())}
-          </Text>
-          <Text>
+          </DefaultOpenSansText>
+          <DefaultOpenSansText>
             {props.affordability.replace(/\b\w/g, (l) => l.toUpperCase())}
-          </Text>
+          </DefaultOpenSansText>
         </View>
       </TouchableOpacity>
     </View>

@@ -1,18 +1,15 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { Text, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   text: {
     fontFamily: "open-sans",
+    color: "#000",
   },
 });
 
 const DefaultOpenSansText = (props) => {
-  return (
-    <View>
-      <Text style={styles.text}>{props.text}</Text>
-    </View>
-  );
+  return <Text style={styles.text}>{props.children}</Text>;
 };
 
 export default DefaultOpenSansText;
