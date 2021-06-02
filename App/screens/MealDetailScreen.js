@@ -23,7 +23,19 @@ const styles = StyleSheet.create({
     padding: 15,
     justifyContent: "space-around",
   },
-  title: {},
+  title: {
+    fontFamily: "open-sans-bold",
+    paddingVertical: 10,
+    fontSize: 19,
+    marginHorizontal: 20,
+  },
+  list: {
+    marginVertical: 10,
+    marginHorizontal: 20,
+    borderColor: "#ccc",
+    borderWidth: 1,
+    padding: 10,
+  },
 });
 
 const MealDetailScreen = (props) => {
@@ -57,10 +69,18 @@ const MealDetailScreen = (props) => {
       </View>
 
       <Text style={styles.title}>Ingredients</Text>
-      <Text>List of Ingredients...</Text>
+      {selectedMeal.ingredients.map((ingredient, index) => (
+        <Text style={styles.list} key={ingredient}>
+          {`(${index + 1}) ${ingredient}`}
+        </Text>
+      ))}
 
       <Text style={styles.title}>Steps</Text>
-      <Text>List of Steps...</Text>
+      {selectedMeal.steps.map((step, index) => (
+        <Text style={styles.list} key={step}>
+          {`(${index + 1}) ${step}`}
+        </Text>
+      ))}
     </ScrollView>
   );
 };
