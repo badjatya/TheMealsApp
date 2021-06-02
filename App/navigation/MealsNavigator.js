@@ -213,6 +213,17 @@ const FilterStackNavigatorScreen = ({ navigation }) => {
               />
             );
           },
+          headerRight: () => {
+            return (
+              <Icon
+                name="save"
+                size={25}
+                style={{ paddingRight: 10, paddingTop: 5 }}
+                color="#fff"
+                onPress={() => navigation.openDrawer()}
+              />
+            );
+          },
         }}
       />
     </FilterStackNavigator.Navigator>
