@@ -1,3 +1,4 @@
+// import React, { useState, useEffect, useCallback } from "react";
 import React, { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 
@@ -17,10 +18,28 @@ const styles = StyleSheet.create({
 });
 
 const FiltersScreen = () => {
+  // const { navigation } = props;
+
   const [isGlutenFree, setIsGlutenFree] = useState(false);
   const [isLactoseFree, setIsLactoseFree] = useState(false);
   const [isVegan, SetIsVegan] = useState(false);
   const [isVegetarian, setIsVegetarian] = useState(false);
+
+  // const saveFilters = useCallback(() => {
+  //   const appliedFilters = {
+  //     glutenFree: isGlutenFree,
+  //     lactoseFree: isLactoseFree,
+  //     vegan: isVegan,
+  //     vegetarian: isVegetarian,
+  //   };
+
+  //   console.log(appliedFilters);
+  // }, [isGlutenFree, isLactoseFree, isVegan, isVegetarian]);
+
+  // useEffect(() => {
+  //   navigation.setParams({ save: saveFilters });
+  // });
+
   return (
     <View style={styles.screen}>
       <Text style={styles.title}>Available Filters / Restrictions</Text>

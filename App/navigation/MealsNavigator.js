@@ -178,7 +178,8 @@ const FavoriteBottomTabScreen = () => {
 // TODO: Hamburger Menu
 
 const FilterStackNavigator = createStackNavigator();
-const FilterStackNavigatorScreen = ({ navigation }) => {
+const FilterStackNavigatorScreen = (props) => {
+  const { navigation } = props;
   return (
     <FilterStackNavigator.Navigator
       screenOptions={{
@@ -220,7 +221,7 @@ const FilterStackNavigatorScreen = ({ navigation }) => {
                 size={25}
                 style={{ paddingRight: 10, paddingTop: 5 }}
                 color="#fff"
-                onPress={() => navigation.openDrawer()}
+                onPress={() => alert("Hell")}
               />
             );
           },
