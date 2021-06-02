@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     borderColor: "#ccc",
     borderWidth: 1,
     padding: 10,
+    fontFamily: "open-sans",
   },
 });
 
