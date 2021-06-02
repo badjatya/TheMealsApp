@@ -1,15 +1,29 @@
 import React, { useEffect } from "react";
-import { View, Text, StyleSheet, Button, Platform } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Platform,
+  Image,
+} from "react-native";
+
+import DefaultOpenSansText from "../components/DefaultOpenSansText";
 
 import { MEALS } from "../data/dummy-data";
 import Colors from "../constants/colors";
 
 const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+  image: {
+    width: "100%",
+    height: 200,
   },
+  details: {
+    flexDirection: "row",
+    padding: 15,
+    justifyContent: "space-around",
+  },
+  title: {},
 });
 
 const MealDetailScreen = (props) => {
@@ -29,10 +43,25 @@ const MealDetailScreen = (props) => {
   });
 
   return (
-    <View style={styles.screen}>
-      <Text>{selectedMeal.title}</Text>
-      <Button title="Back" onPress={() => props.navigation.popToTop()} />
-    </View>
+    <ScrollView>
+      <Image source={{ uri: selectedMeal.imageUrl }} style={styles.image} />
+
+      <View style={styles.details}>
+        <DefaultOpenSansText>{`${selectedMeal.duration}m`}</DefaultOpenSansText>
+        <DefaultOpenSansText>
+          {selectedMeal.complexity.replace(/\b\w/g, (l) => l.toUpperCase())}
+        </DefaultOpenSansText>
+        <DefaultOpenSansText>
+          {selectedMeal.affordability.replace(/\b\w/g, (l) => l.toUpperCase())}
+        </DefaultOpenSansText>
+      </View>
+
+      <Text style={styles.title}>Ingredients</Text>
+      <Text>List of Ingredients...</Text>
+
+      <Text style={styles.title}>Steps</Text>
+      <Text>List of Steps...</Text>
+    </ScrollView>
   );
 };
 
