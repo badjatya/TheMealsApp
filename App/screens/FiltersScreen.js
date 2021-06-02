@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet } from "react-native";
 
 import Icon from "react-native-vector-icons/Ionicons";
@@ -25,19 +25,7 @@ const FiltersScreen = (props) => {
   const [isVegan, SetIsVegan] = useState(false);
   const [isVegetarian, setIsVegetarian] = useState(false);
 
-  const saveFilters = useCallback(() => {
-    const appliedFilters = {
-      glutenFree: isGlutenFree,
-      lactoseFree: isLactoseFree,
-      vegan: isVegan,
-      vegetarian: isVegetarian,
-    };
-
-    console.log(appliedFilters);
-  }, [isGlutenFree, isLactoseFree, isVegan, isVegetarian]);
-
   useEffect(() => {
-    navigation.setParams({ save: saveFilters });
     navigation.setOptions({
       headerRight: () => {
         return (
@@ -46,7 +34,14 @@ const FiltersScreen = (props) => {
             size={25}
             style={{ paddingRight: 10, paddingTop: 5 }}
             color="#fff"
-            onPress={() => alert("hi")}
+            onPress={() =>
+              navigation.navigate("Categories", {
+                glutenFree: isGlutenFree,
+                lactoseFree: isLactoseFree,
+                vegan: isVegan,
+                vegetarian: isVegetarian,
+              })
+            }
           />
         );
       },
