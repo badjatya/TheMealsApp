@@ -5,8 +5,13 @@ import Colors from "../constants/colors";
 import DefaultOpenSansText from "./DefaultOpenSansText";
 
 const styles = StyleSheet.create({
-  filterContainer: {},
-  title: {},
+  filterContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "75%",
+    marginVertical: 13,
+  },
 });
 
 const FilterSwitch = (props) => {

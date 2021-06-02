@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, Switch } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
-import Colors from "../constants/colors";
+import FilterSwitch from "../components/FilterSwitch";
 
 const styles = StyleSheet.create({
   screen: {
@@ -14,28 +14,36 @@ const styles = StyleSheet.create({
     margin: 20,
     textAlign: "center",
   },
-  filterContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    width: "80%",
-  },
 });
 
 const FiltersScreen = () => {
   const [isGlutenFree, setIsGlutenFree] = useState(false);
+  const [isLactoseFree, setIsLactoseFree] = useState(false);
+  const [isVegan, SetIsVegan] = useState(false);
+  const [isVegetarian, setIsVegetarian] = useState(false);
   return (
     <View style={styles.screen}>
       <Text style={styles.title}>Available Filters / Restrictions</Text>
-      <View style={styles.filterContainer}>
-        <Text>Gluten-Free</Text>
-        <Switch
-          value={isGlutenFree}
-          onValueChange={(value) => setIsGlutenFree(value)}
-          trackColor={{ true: "#ccc", false: "#ccc" }}
-          thumbColor={Colors.primaryColor}
-        />
-      </View>
+      <FilterSwitch
+        title="Gluten-Free"
+        value={isGlutenFree}
+        onChange={(value) => setIsGlutenFree(value)}
+      />
+      <FilterSwitch
+        title="Lactose-Free"
+        value={isLactoseFree}
+        onChange={(value) => setIsLactoseFree(value)}
+      />
+      <FilterSwitch
+        title="Vegan"
+        value={isVegan}
+        onChange={(value) => SetIsVegan(value)}
+      />
+      <FilterSwitch
+        title="Vegetarian"
+        value={isVegetarian}
+        onChange={(value) => setIsVegetarian(value)}
+      />
     </View>
   );
 };
