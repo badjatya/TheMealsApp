@@ -214,17 +214,6 @@ const FilterStackNavigatorScreen = (props) => {
               />
             );
           },
-          headerRight: () => {
-            return (
-              <Icon
-                name="save"
-                size={25}
-                style={{ paddingRight: 10, paddingTop: 5 }}
-                color="#fff"
-                onPress={() => alert("Hell")}
-              />
-            );
-          },
         }}
       />
     </FilterStackNavigator.Navigator>
