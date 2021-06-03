@@ -67,9 +67,9 @@ const MainStackScreen = ({ navigation }) => {
           headerRight: () => (
             <HeaderButtons HeaderButtonComponent={CustomHeaderIcon}>
               <Item
-                iconName="ios-star-outline"
+                iconName="ios-star"
                 title="Favorite"
-                onPress={() => alert("Hello")}
+                onPress={() => alert("hell")}
               />
             </HeaderButtons>
           ),
