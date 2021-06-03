@@ -1,16 +1,20 @@
 import React, { useEffect } from "react";
 import { Platform } from "react-native";
 
+import { useSelector } from "react-redux";
+
 import MealList from "../components/MealList";
 
-import { CATEGORIES, MEALS } from "../data/dummy-data";
+import { CATEGORIES } from "../data/dummy-data";
 import Colors from "../constants/colors";
 
 const CategoryMealScreen = ({ navigation, route }) => {
   const { catId } = route.params;
 
+  const availableMeals = useSelector((state) => state.meals.filteredMeals);
+
   const selectedCategory = CATEGORIES.find((cat) => cat.id === catId);
-  const displayedMeals = MEALS.filter(
+  const displayedMeals = availableMeals.filter(
     (meal) => meal.categoryIds.indexOf(catId) >= 0
   );
 
