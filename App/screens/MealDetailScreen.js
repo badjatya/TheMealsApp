@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import {
   View,
   Text,
@@ -10,7 +11,6 @@ import {
 
 import DefaultOpenSansText from "../components/DefaultOpenSansText";
 
-import { MEALS } from "../data/dummy-data";
 import Colors from "../constants/colors";
 
 const styles = StyleSheet.create({
@@ -41,8 +41,9 @@ const styles = StyleSheet.create({
 
 const MealDetailScreen = (props) => {
   const { mealId } = props.route.params;
+  const availableMeals = useSelector((state) => state.meals.filteredMeals);
 
-  const selectedMeal = MEALS.find((meal) => meal.id === mealId);
+  const selectedMeal = availableMeals.find((meal) => meal.id === mealId);
 
   useEffect(() => {
     props.navigation.setOptions({
